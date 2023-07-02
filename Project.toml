@@ -1,0 +1,7 @@
+name = "Interpolation_with_the_barycentric_formula"
+uuid = "ab9f156e-26bd-4cb1-b7f7-698a249cb7a4"
+authors = ["lovc21 <jakob.dekleva@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
