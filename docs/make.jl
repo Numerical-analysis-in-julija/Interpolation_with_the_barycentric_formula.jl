@@ -11,5 +11,7 @@ makedocs(
 # See "Hosting Documentation" and deploydocs() in the Documenter manual
 # for more information.
 deploydocs(
-    repo = "github.com/lovc21/Interpolation_with_the_barycentric_formula.jl.git"
+    repo = "github.com/lovc21/Interpolation_with_the_barycentric_formula.jl.git",
+    push_preview = true,
+    devbranch = "main",
 )
