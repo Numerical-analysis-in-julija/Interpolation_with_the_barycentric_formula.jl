@@ -1,4 +1,4 @@
-using Interpolation
+using Interpolation_with_the_barycentric_formula
 
 f1(x) = exp.(-x.^2)
 f2(x) = sin.(x)

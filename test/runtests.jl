@@ -1,5 +1,5 @@
 using Test
-using InterpolationModule
+using Interpolation_with_the_barycentric_formula
 
 
 # Test 1: Chebyshev points and weights
