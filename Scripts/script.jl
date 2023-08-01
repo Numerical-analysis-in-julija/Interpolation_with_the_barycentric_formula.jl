@@ -1,7 +1,9 @@
 using Interpolation_with_the_barycentric_formula
 
+precision = 1e-6
+
 f1(x) = exp.(-x.^2)
-f2(x) = sin.(x)
+f2(x) = sin.(x) 
 f3(x) = abs.(x.^2 - 2 .* x)
 
 functions = [f1, f2, f3]
@@ -9,11 +11,10 @@ intervals = [(-1, 1), (0, 10), (1, 3)]
 names = ["exp(-x^2)", "sin(x)", "|x^2 - 2x|"]
 
 for (f, interval, name) in zip(functions, intervals, names)
-    println("Interpolating function $name on interval $interval...")
     a, b = interval
     degree = 0
     error = Inf
-    while error > 1e-6 && degree < 100
+    while error > precision && degree < 100
         degree += 1
         x, w = chebyshev_points_weights(degree)
         y = f(transform(x, a, b))
@@ -21,5 +22,5 @@ for (f, interval, name) in zip(functions, intervals, names)
         y_interpolated = barycentric_interpolation(x, y, w, x_test)
         error = interpolation_error(f, y_interpolated, x_test, a, b)
     end
-    println("  Achieved error $error with polynomial degree $degree")
+    println("  Achieved error $error with polynomial degree $degree for function $name.")
 end
