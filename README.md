@@ -1,7 +1,7 @@
 # Interpolation using Barycentric Formula
 
-[![Documenter](https://github.com/lovc21/Methode_of_conjugate_gradients.lj/actions/workflows/Documenter.yml/badge.svg)](https://github.com/lovc21/Methode_of_conjugate_gradients.lj/actions/workflows/Documenter.yml)
-[![Runtests](https://github.com/lovc21/Methode_of_conjugate_gradients.lj/actions/workflows/Runtests.yml/badge.svg)](https://github.com/lovc21/Methode_of_conjugate_gradients.lj/actions/workflows/Runtests.yml)
+[![Documenter](https://github.com/lovc21/Interpolation_with_the_barycentric_formula.jl/actions/workflows/Documenter.yml/badge.svg)](https://github.com/lovc21/Interpolation_with_the_barycentric_formula.jl/actions/workflows/Documenter.yml)
+[![Runtests](https://github.com/lovc21/Interpolation_with_the_barycentric_formula.jl/actions/workflows/Runtests.yml/badge.svg)](https://github.com/lovc21/Interpolation_with_the_barycentric_formula.jlin/actions/workflows/Runtests.yml)
 
 In this repository, you can finde the code for Homework 3 of the Numerical Methods course.The code is written in Julia, and the main implementation can be found in the file `src/Interpolation_with_the_barycentric_formula.jl`. The code is tested using the file `test/runtests.jl`, and it is documented using the file docs/make.jl, you can test the code for the specific by running the `Scripts/script.jl` file.
 
