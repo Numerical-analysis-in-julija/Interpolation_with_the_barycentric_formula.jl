@@ -1,3 +1,3 @@
 var documenterSearchIndex = {"docs":
-[{"location":"#Interpolation*with*the*barycentric*formula.jl","page":"Interpolationwiththebarycentricformula.jl","title":"Interpolationwiththebarycentricformula.jl","text":"","category":"section"},{"location":"","page":"Interpolationwiththebarycentricformula.jl","title":"Interpolationwiththebarycentricformula.jl","text":"Documentation for Interpolationwiththebarycentricformula.jl","category":"page"}]
+[{"location":"#Interpolation-with-the-barycentric-formula","page":"Interpolation with the barycentric formula","title":"Interpolation with the barycentric formula","text":"","category":"section"}]
 }
