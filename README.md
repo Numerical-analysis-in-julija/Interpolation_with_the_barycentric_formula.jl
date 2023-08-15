@@ -7,6 +7,9 @@ In this repository, you can finde the code for Homework 3 of the Numerical Metho
 
 To run the code, it is necessary to have Julia installed on your computer. Once downloaded, you can run the code for the following equations:  e^(-x^2)  on \([-1,1]\) , sin(x)/x  on \([0,10]\) and |x^2-2x|  on \([1,3]\).To run the code, you can simply start the script  `Scripts/script.jl`.The script will compute the interpolation for the three equations and will return the reuslts to the precision of 1e-6.  
 
+The code and the Mathematical backround is documented using Documenter.jl. To see the documentation, you can run the docs/make.jl file. The documentation is also available online at  [documentation](https://lovc21.github.io/Interpolation_with_the_barycentric_formula.jl/dev/).
+
+---
 Here are the results of the interpolation for the three equations for the nodes 1 ,3 the number so that the error is less than 1e-6:
 
 1. e^(-x^2)
