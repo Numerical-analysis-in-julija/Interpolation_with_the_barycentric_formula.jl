@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Interpolation with the barycentric formula · Interpolation_with_the_barycentric_formula</title><script data-outdated-warner src="assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href>Interpolation_with_the_barycentric_formula</a></span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Interpolation with the barycentric formula</a><ul class="internal"><li><a class="tocitem" href="#Mathematical-backround"><span>Mathematical backround</span></a></li><li><a class="tocitem" href="#Code-documentation"><span>Code documentation</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Interpolation with the barycentric formula</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Interpolation with the barycentric formula</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/lovc21/Interpolation_with_the_barycentric_formula.jl/blob/main/docs/src/index.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Interpolation-with-the-barycentric-formula"><a class="docs-heading-anchor" href="#Interpolation-with-the-barycentric-formula">Interpolation with the barycentric formula</a><a id="Interpolation-with-the-barycentric-formula-1"></a><a class="docs-heading-anchor-permalink" href="#Interpolation-with-the-barycentric-formula" title="Permalink"></a></h1><p>This is the documentation for the repository of homework 3 Interpolation with the barycentric formula of the course Numerical Methods. This documentation is devided in two parts: the first one is the documentation of the mathematical backround of the task and the second part is the documentation of the code we used to solve the task.</p><h2 id="Mathematical-backround"><a class="docs-heading-anchor" href="#Mathematical-backround">Mathematical backround</a><a id="Mathematical-backround-1"></a><a class="docs-heading-anchor-permalink" href="#Mathematical-backround" title="Permalink"></a></h2><h3 id="Introduction"><a class="docs-heading-anchor" href="#Introduction">Introduction</a><a id="Introduction-1"></a><a class="docs-heading-anchor-permalink" href="#Introduction" title="Permalink"></a></h3><p>The point of the given task is to numerically interpolate the following function: e^(-x^2)  on ([-1,1]) , sin(x)/x  on ([0,10]) and |x^2-2x|  on ([1,3]). The interpolation is done with the barycentric formula and Chebyshev points. </p><h3 id="Chebyshev-points"><a class="docs-heading-anchor" href="#Chebyshev-points">Chebyshev points</a><a id="Chebyshev-points-1"></a><a class="docs-heading-anchor-permalink" href="#Chebyshev-points" title="Permalink"></a></h3><p>Chebyshev points are the roots of the Chebyshev polynomials. The Chebyshev polynomials are defined as a sequence of orthogonal polynomials defined on the interval [−1,1].</p><p>Chebyshev points of the first kind in the interval [−1,1] are given by the formula:</p><p>&lt;table align=&quot;center&quot;&gt;     &lt;tr&gt;         &lt;td&gt;             &lt;img src=https://latex.codecogs.com/svg.latex?x_k%20%3D%20%5Ccos%5Cleft%28%5Cfrac%7B%282k&amp;plus;1%29%5Cpi%7D%7B2%28n&amp;plus;1%29%7D%5Cright%29&gt;         &lt;/td&gt;     &lt;/tr&gt; &lt;/table&gt;</p><p>And for the Chebyshev points on the interval [a, b]:</p><p>&lt;table align=&quot;center&quot;&gt;     &lt;tr&gt;         &lt;td&gt;             &lt;img src=https://latex.codecogs.com/svg.latex?x_k%20%3D%20%5Cfrac%7Ba&amp;plus;b%7D%7B2%7D%20&amp;plus;%20%5Cfrac%7Bb-a%7D%7B2%7D%20%5Ccos%5Cleft%28%5Cfrac%7B%282k&amp;plus;1%29%5Cpi%7D%7B2%28n&amp;plus;1%29%7D%5Cright%29&gt;         &lt;/td&gt;     &lt;/tr&gt; &lt;/table&gt;</p><h3 id="Barycentric-formula"><a class="docs-heading-anchor" href="#Barycentric-formula">Barycentric formula</a><a id="Barycentric-formula-1"></a><a class="docs-heading-anchor-permalink" href="#Barycentric-formula" title="Permalink"></a></h3><p>The barycentric formula is a method for numerical interpolation. It is based on the Lagrange interpolation formula. The Lagrange interpolation formula is the following:</p><p>&lt;table align=&quot;center&quot;&gt;     &lt;tr&gt;         &lt;td&gt;             &lt;img src=https://latex.codecogs.com/svg.latex?p(x)%20=%20\sum<em>{j=0}^{n}%20f(x</em>j)%20\ell_j(x)&gt;         &lt;/td&gt;     &lt;/tr&gt; &lt;/table&gt;</p><p>But this formula is numerically unstable, so we use the barycentric formula instead. The barycentric formula is the following:</p><p>&lt;table align=&quot;center&quot;&gt;     &lt;tr&gt;         &lt;td&gt;             &lt;img src=https://latex.codecogs.com/svg.latex?p(x)%20=%20\frac{\sum<em>{j=0}^{n}%20\lambda</em>j%20f(x<em>j)%20/%20(x%20-%20x</em>j)}{\sum<em>{j=0}^{n}%20\lambda</em>j%20/%20(x%20-%20x_j)}&gt;         &lt;/td&gt;     &lt;/tr&gt; &lt;/table&gt;</p><p>This formula offers a numerically stable way to interpolate a function and it is also faster than the Lagrange interpolation formula.</p><h3 id="The-results-of-the-interpolation"><a class="docs-heading-anchor" href="#The-results-of-the-interpolation">The results of the interpolation</a><a id="The-results-of-the-interpolation-1"></a><a class="docs-heading-anchor-permalink" href="#The-results-of-the-interpolation" title="Permalink"></a></h3><p>The following pictures show the results of the interpolation of the given functions with the barycentric formula and Chebyshev points.</p><ol><li>e^(-x^2)</li></ol><p>&lt;p align=&quot;center&quot;&gt;   &lt;img width=&quot;460&quot; height=&quot;300&quot; src=&quot;./images/ezgif-4-cfcfa1457c.gif&quot;&gt; &lt;/p&gt;</p><ol><li>sin(x)/x </li></ol><p>&lt;p align=&quot;center&quot;&gt;   &lt;img width=&quot;460&quot; height=&quot;300&quot; src=&quot;./images/ezgif-4-e9a28c1c2b.gif&quot;&gt; &lt;/p&gt;</p><ol><li>|x^2-2x|</li></ol><p>&lt;p align=&quot;center&quot;&gt;   &lt;img width=&quot;460&quot; height=&quot;300&quot; src=&quot;./images/ezgif-4-53e4254853.gif&quot;&gt; &lt;/p&gt;</p><h2 id="Code-documentation"><a class="docs-heading-anchor" href="#Code-documentation">Code documentation</a><a id="Code-documentation-1"></a><a class="docs-heading-anchor-permalink" href="#Code-documentation" title="Permalink"></a></h2><p>First we calculate the Chebyshev nodes using the second formula for the Chebyshev points. We use the following function to calculate the Chebyshev nodes:</p><pre><code class="language-julia hljs">function chebyshev_nodes(n, a, b)
+
+    # Check the nodes calculation
+    nodes = [cos(π * (i / n)) for i in 0:n]
+    
+    # Check the mapping to the interval
+    mapped_nodes = [(a + b) / 2 + (b - a) / 2 * x for x in nodes]
+   
+    return mapped_nodes
+end</code></pre><p>Next we calculate the weights for the barycentric formula. We use the following function to calculate the weights:</p><pre><code class="language-julia hljs">function chebyshev_weights(n)
+    weights = [Float64((-1)^i) for i in 0:n]
+    weights[1] *= 0.5
+    weights[end] *= 0.5
+    return weights
+end</code></pre><p>After that we can caculate the barycentric interpolation using the barycentric formula. We use the following function to calculate the barycentric interpolation:</p><pre><code class="language-julia hljs">function barycentric_interpolation(nodes,values, weights, x)
+   if x in nodes
+        return values[nodes .== x][1]
+    else
+         # Calculate the numerator
+         numerator = sum(values[i] * weights[i] ./ (x .- nodes[i]) for i in 1:length(nodes))
+         # Calculate the denominator
+         denominator = sum(weights[i] ./ (x .- nodes[i]) for i in 1:length(nodes))
+    end
+
+    return numerator / denominator
+end</code></pre><p>After we have the barycentric interpolation we can run the code so that we are in the exaptible level of precision. We use the following function to run the code:</p><pre><code class="language-julia hljs">function get_optimal_degree(func, a, b,n,precision)
+    while true
+        nodes = chebyshev_nodes(n, a, b)
+        values = [func(node) for node in nodes]
+        weights = chebyshev_weights(n)
+        
+        test_points = range(a, stop=b, length=1000)
+        max_error = 0.0
+
+        for x in test_points
+            interpolated_value = barycentric_interpolation(nodes, values, weights, x)
+            error = abs(func(x) - interpolated_value)
+            max_error = max(max_error, error)
+        end
+
+        if max_error &lt; precision
+            return n
+        end
+
+        n += 1  
+    
+    end
+end</code></pre><p>Finally we can plot the results of the interpolation. We use the following function to plot the results:</p><pre><code class="language-julia hljs">function plot_interpolation(f, a, b, n, name)
+    nodes = chebyshev_nodes(n, a, b)
+    values = [f(node) for node in nodes]
+    weights = chebyshev_weights(n)
+    
+    x_vals = range(a, stop=b, length=1000)
+    y_true = [f(x) for x in x_vals]
+    y_interp = [barycentric_interpolation(nodes, values, weights, x) for x in x_vals]
+    
+    p = plot(x_vals, y_true, label=&quot;Original $name&quot;, lw=2)
+    plot!(p, x_vals, y_interp, label=&quot;Interpolated $name n=$n&quot;, linestyle=:dash, lw=2)
+    title!(&quot;Interpolation of $name with degree $n&quot;)
+    xlabel!(&quot;x&quot;)
+    ylabel!(&quot;f(x)&quot;)
+    return p
+end</code></pre></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Thursday 17 August 2023 18:04">Thursday 17 August 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
